@@ -5,17 +5,19 @@ Just import the classes and create a ImageLoader, SWFLoader or XMLLoader object,
 
 
 ## Example for loading an image
-	import net.ImageLoader.as;
-	import events.ImageLoaderEvent.as;
+```js
+import net.ImageLoader.as;
+import events.ImageLoaderEvent.as;
 	
-	var loader:ImageLoader = new ImageLoader();
-	loader.addEventListener(ImageLoaderEvent.COMPLETE, onComplete);
-	loader.load('my-file.jpg');
+var loader:ImageLoader = new ImageLoader();
+loader.addEventListener(ImageLoaderEvent.COMPLETE, onComplete);
+loader.load('my-file.jpg');
 	
-	function onComplete(e:ImageLoaderEvent):void
-	{
-		e.target.removeEventListener(ImageLoaderEvent.COMPLETE, onComplete); // you don't have to but this is good for performance
-		var image:Bitmap = e.target.content;
-		
-		// then do whatever you want with the image
-	}
+function onComplete(e:ImageLoaderEvent):void
+{
+	e.target.removeEventListener(ImageLoaderEvent.COMPLETE, onComplete); // you don't have to but this is good for performance
+	var image:Bitmap = e.target.content;
+	
+	// then do whatever you want with the image
+}
+```
